@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yuqi Yang (Aragorn), incoming Statistics PhD student at Wharton working on conformal inference, distribution shift, and reliable AI.">
+    <title>Yuqi Yang (Aragorn)</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #171717;
+            --muted: #6f6f6f;
+            --faint: #e8e5df;
+            --accent: #1f5f8b;
+            --max-width: 760px;
+            --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --serif: Georgia, "Times New Roman", Times, serif;
+            --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--serif);
+            font-size: 17px;
+            line-height: 1.62;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        a {
+            color: inherit;
+            text-decoration-color: rgba(31, 95, 139, 0.36);
+            text-decoration-thickness: 0.08em;
+            text-underline-offset: 0.2em;
+        }
+
+        a:hover,
+        a:focus {
+            color: var(--accent);
+            text-decoration-color: currentColor;
+        }
+
+        .page {
+            margin: 0 auto;
+            max-width: var(--max-width);
+            padding: 48px 24px 72px;
+        }
+
+        .site-header {
+            align-items: center;
+            display: flex;
+            gap: 24px;
+            justify-content: space-between;
+            margin-bottom: 56px;
+        }
+
+        .wordmark {
+            color: var(--text);
+            font-family: var(--sans);
+            font-size: 0.86rem;
+            font-weight: 700;
+            letter-spacing: 0;
+            text-decoration: none;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 18px;
+            justify-content: flex-end;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-family: var(--sans);
+            font-size: 0.84rem;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: var(--text);
+            text-decoration: underline;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin: 0;
+        }
+
+        h1 {
+            font-size: clamp(1.9rem, 5.8vw, 2.85rem);
+            font-weight: 400;
+            letter-spacing: 0;
+            line-height: 1.05;
+            margin-bottom: 14px;
+        }
+
+        h1 span {
+            color: var(--muted);
+            display: block;
+            font-size: clamp(1.15rem, 3.4vw, 1.55rem);
+            margin-top: 5px;
+        }
+
+        h2 {
+            border-bottom: 1px solid var(--faint);
+            color: var(--muted);
+            font-family: var(--sans);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            font-size: 1.08rem;
+            font-weight: 600;
+            line-height: 1.35;
+            margin-bottom: 4px;
+        }
+
+        section {
+            margin: 54px 0;
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            font-family: var(--sans);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .lede {
+            font-size: 1.08rem;
+            line-height: 1.56;
+            margin-bottom: 18px;
+        }
+
+        .bio {
+            color: #3f3f3f;
+            max-width: 720px;
+        }
+
+        .feed {
+            display: grid;
+            gap: 0;
+        }
+
+        .feed-item {
+            border-bottom: 1px solid var(--faint);
+            display: grid;
+            gap: 22px;
+            grid-template-columns: 108px 1fr;
+            padding: 15px 0;
+        }
+
+        .date {
+            color: var(--muted);
+            font-family: var(--sans);
+            font-size: 0.78rem;
+            line-height: 1.55;
+        }
+
+        .feed-item p,
+        .publication p,
+        .note {
+            color: #343434;
+        }
+
+        .links {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 14px;
+            margin-top: 7px;
+        }
+
+        .links a {
+            color: var(--accent);
+            font-family: var(--sans);
+            font-size: 0.8rem;
+            text-decoration: none;
+        }
+
+        .links a:hover,
+        .links a:focus {
+            text-decoration: underline;
+        }
+
+        .research-list,
+        .award-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .research-list li {
+            border-bottom: 1px solid var(--faint);
+            padding: 13px 0;
+        }
+
+        .research-list strong {
+            font-weight: 600;
+        }
+
+        .publication {
+            border-bottom: 1px solid var(--faint);
+            padding: 18px 0;
+        }
+
+        .meta {
+            color: var(--muted);
+            font-family: var(--sans);
+            font-size: 0.86rem;
+        }
+
+        .authors {
+            color: #343434;
+            font-size: 0.94rem;
+            margin: 3px 0 6px;
+        }
+
+        .award-list {
+            columns: 2;
+            column-gap: 34px;
+            color: #343434;
+        }
+
+        .award-list li {
+            break-inside: avoid;
+            margin-bottom: 10px;
+        }
+
+        .award-list span {
+            color: var(--muted);
+            font-family: var(--sans);
+            font-size: 0.78rem;
+            margin-right: 8px;
+            white-space: nowrap;
+        }
+
+        footer {
+            border-top: 1px solid var(--faint);
+            color: var(--muted);
+            font-family: var(--sans);
+            font-size: 0.78rem;
+            margin-top: 68px;
+            padding-top: 20px;
+        }
+
+        @media (max-width: 640px) {
+            html {
+                font-size: 16px;
+            }
+
+            .page {
+                padding: 34px 18px 56px;
+            }
+
+            .site-header {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 14px;
+                margin-bottom: 44px;
+            }
+
+            .nav-links {
+                justify-content: flex-start;
+            }
+
+            .feed-item {
+                gap: 4px;
+                grid-template-columns: 1fr;
+                padding: 16px 0;
+            }
+
+            .award-list {
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <header class="site-header">
+            <a class="wordmark" href="/">Yuqi Yang</a>
+            <nav class="nav-links" aria-label="Primary">
+                <a href="https://scholar.google.com/citations?user=ICgQw6wAAAAJ">Scholar</a>
+                <a href="https://github.com/AragornBFRer">GitHub</a>
+                <a href="https://www.linkedin.com/in/aragorn-y">LinkedIn</a>
+                <a href="mailto:yangyuqi@wharton.upenn.edu">Email</a>
+            </nav>
+        </header>
+
+        <section aria-labelledby="intro-title">
+            <p class="eyebrow">Statistics PhD @ Wharton, Fall 2026</p>
+            <h1 id="intro-title">Yuqi Yang <span>(Aragorn)</span></h1>
+            <p class="lede">
+                I study statistical methods for reliable AI, with a focus on conformal inference,
+                multiple testing, distribution shift, and rigorous evaluation of modern ML systems.
+            </p>
+            <p class="bio">
+                I am completing a bachelor's degree at HKUST, double majoring in Mathematics and
+                Computer Science. I currently work with Prof. <a href="https://ying531.github.io/">Ying Jin</a>
+                at Wharton and Prof. <a href="https://facultyprofiles.hkust.edu.hk/profiles.php?profile=xinzhou-guo-xinzhoug">Xinzhou Guo</a>
+                at HKUST. Previously, I worked on cognitive science and intention understanding with
+                Prof. <a href="https://scholar.google.com/citations?user=MdQZ-q8AAAAJ&hl=en">Yangqiu Song</a>
+                at the KnowComp Group, and visited ETH Zurich in Spring 2025.
+            </p>
+        </section>
+
+        <!-- <section aria-labelledby="updates-title">
+            <h2 id="updates-title">Updates</h2>
+            <div class="feed">
+                <article class="feed-item">
+                    <time class="date" datetime="2026">Fall 2026</time>
+                    <p>I will begin my PhD in Statistics at the Wharton School of the University of Pennsylvania.</p>
+                </article>
+                <article class="feed-item">
+                    <time class="date" datetime="2026-05">May 2026</time>
+                    <p>
+                        <strong>Multi-Distribution Robust Conformal Prediction</strong> was accepted to ICML 2026.
+                        <span class="links">
+                            <a href="https://arxiv.org/abs/2601.02998">Paper</a>
+                            <a href="https://github.com/AragornBFRer/MDCP">Code</a>
+                        </span>
+                    </p>
+                </article>
+                <article class="feed-item">
+                    <time class="date" datetime="2026-04">Apr 2026</time>
+                    <p>
+                        <strong>SessionIntentBench</strong> was accepted to Findings of ACL 2026.
+                        <span class="links">
+                            <a href="https://arxiv.org/abs/2507.20185">Paper</a>
+                        </span>
+                    </p>
+                </article>
+            </div>
+        </section> -->
+
+        <section aria-labelledby="research-title">
+            <h2 id="research-title">Research</h2>
+            <ul class="research-list">
+                <li><strong>Uncertainty and robustness.</strong> Conformal prediction, reliable coverage, and deployment under distribution shift.</li>
+                <li><strong>Evaluation of AI systems.</strong> Statistically rigorous evaluation, falsification, verification, and multiple testing.</li>
+                <li><strong>Foundations.</strong> Statistical foundations of modern AI/ML, with active interests in causal inference and deep learning theory.</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="publications-title">
+            <h2 id="publications-title">Publications</h2>
+            <article class="publication">
+                <h3>Multi-Distribution Robust Conformal Prediction</h3>
+                <p class="authors">Yuqi Yang, Ying Jin</p>
+                <p class="meta">Accepted to ICML 2026</p>
+                <p>
+                    One prediction set with uniformly valid coverage across heterogeneous source distributions,
+                    using an asymptotically optimal score for efficient worst-case guarantees.
+                </p>
+                <p class="links">
+                    <a href="https://arxiv.org/abs/2601.02998">Paper</a>
+                    <a href="https://github.com/AragornBFRer/MDCP">Code</a>
+                </p>
+            </article>
+
+            <article class="publication">
+                <h3>SessionIntentBench: Multi-task Inter-Session Intention-Shift Modeling Benchmark for E-commerce Customer Behavior Understanding</h3>
+                <p class="authors">Yuqi Yang, Weiqi Wang, Baixuan Xu, Wei Fan, Qing Zong, Chunkit Chan, Zheye Deng, Xin Liu, Yifan Gao, Changlong Yu, Chen Luo, Yang Li, Zheng Li, Qingyu Yin, Bing Yin, Yangqiu Song</p>
+                <p class="meta">Accepted to Findings of ACL 2026</p>
+                <p>
+                    A benchmark and modeling framework for intention shifts across underexplored
+                    e-commerce session interactions.
+                </p>
+                <p class="links">
+                    <a href="https://arxiv.org/abs/2507.20185">Paper</a>
+                </p>
+            </article>
+        </section>
+
+        <section aria-labelledby="experience-title">
+            <h2 id="experience-title">Experience</h2>
+            <div class="feed">
+                <article class="feed-item">
+                    <span class="date">Sep 2025-present</span>
+                    <p><strong>Research Assistant, HKUST.</strong> Conformal prediction with latent cluster modeling at the covariate and residual levels.</p>
+                </article>
+                <article class="feed-item">
+                    <span class="date">May 2025-present</span>
+                    <p><strong>Research Assistant, Wharton.</strong> Multi-distribution robust conformal prediction with uniform coverage guarantees.</p>
+                </article>
+                <article class="feed-item">
+                    <span class="date">Apr 2024-Feb 2025</span>
+                    <p><strong>Research Assistant, KnowComp Group.</strong> Intention modeling, benchmark construction, data generation, and model evaluation for session understanding.</p>
+                </article>
+                <article class="feed-item">
+                    <span class="date">2023-2025</span>
+                    <p><strong>Industry.</strong> Quant research at Hangzhou Wangdao, hedge fund research at Jihai Investment, and software development at Hundsun.</p>
+                </article>
+            </div>
+        </section>
+
+        <section aria-labelledby="awards-title">
+            <h2 id="awards-title">Selected Awards</h2>
+            <ul class="award-list">
+                <li><span>Aug 2024</span>China Construction Bank Asia Scholarship</li>
+                <li><span>May 2024</span>S.S. Chern Class Scholarship</li>
+                <li><span>Apr 2024</span>Chiaphua Industries Limited Scholarship</li>
+                <li><span>Jan 2024</span>Dean's Honours List</li>
+                <li><span>Oct 2023</span>University Scholarship Scheme for Continuing UG Student</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="misc-title">
+            <h2 id="misc-title">Misc</h2>
+            <p class="note">
+                Outside of research, I go by Aragorn. The name has followed me since I first watched
+                <em>The Lord of the Rings</em>.
+            </p>
+        </section>
+
+        <footer>
+            <p>Updated May 2026. <a href="mailto:yangyuqi@wharton.upenn.edu">yangyuqi@wharton.upenn.edu</a></p>
+        </footer>
+    </main>
+</body>
+</html>
