@@ -8,14 +8,14 @@
     <style>
         :root {
             --bg: #ffffff;
-            --text: #171717;
-            --muted: #6f6f6f;
-            --faint: #e8e5df;
-            --accent: #1f5f8b;
-            --max-width: 760px;
+            --text: #1a1a1a;
+            --muted: #666666;
+            --light-muted: #999999;
+            --faint: #eeeeee;
+            --accent: #0056b3;
+            --max-width: 680px;
             --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            --serif: Georgia, "Times New Roman", Times, serif;
-            --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            --mono: "SF Mono", "Monaco", "Inconsolata", "SFMono-Regular", Consolas, monospace;
         }
 
         * {
@@ -25,9 +25,9 @@
         html {
             background: var(--bg);
             color: var(--text);
-            font-family: var(--serif);
+            font-family: var(--sans);
             font-size: 17px;
-            line-height: 1.62;
+            line-height: 1.6;
         }
 
         body {
@@ -36,7 +36,7 @@
 
         a {
             color: inherit;
-            text-decoration-color: rgba(31, 95, 139, 0.36);
+            text-decoration-color: rgba(0, 102, 204, 0.35);
             text-decoration-thickness: 0.08em;
             text-underline-offset: 0.2em;
         }
@@ -50,40 +50,33 @@
         .page {
             margin: 0 auto;
             max-width: var(--max-width);
-            padding: 48px 24px 72px;
+            padding: 4rem 1.5rem 4.5rem;
         }
 
         .site-header {
-            align-items: center;
-            display: flex;
-            gap: 24px;
-            justify-content: space-between;
-            margin-bottom: 56px;
+            border-bottom: 1px solid var(--faint);
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
         }
 
-        .wordmark {
-            color: var(--text);
-            font-family: var(--sans);
-            font-size: 0.86rem;
-            font-weight: 700;
-            letter-spacing: 0;
-            text-decoration: none;
-            text-transform: uppercase;
-            white-space: nowrap;
+        .tagline {
+            color: var(--muted);
+            font-size: 1.05rem;
+            margin: 0.35rem 0 1.35rem;
         }
 
         .nav-links {
             align-items: center;
             display: flex;
             flex-wrap: wrap;
-            gap: 12px 18px;
-            justify-content: flex-end;
+            gap: 0.7rem 1.2rem;
+            justify-content: flex-start;
         }
 
         .nav-links a {
-            color: var(--muted);
-            font-family: var(--sans);
-            font-size: 0.84rem;
+            color: var(--text);
+            font-size: 0.9rem;
+            font-weight: 500;
             text-decoration: none;
         }
 
@@ -101,89 +94,81 @@
         }
 
         h1 {
-            font-size: clamp(1.9rem, 5.8vw, 2.85rem);
-            font-weight: 400;
-            letter-spacing: 0;
-            line-height: 1.05;
-            margin-bottom: 14px;
+            font-size: clamp(2rem, 5vw, 2.2rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.14;
         }
 
         h1 span {
-            color: var(--muted);
-            display: block;
-            font-size: clamp(1.15rem, 3.4vw, 1.55rem);
-            margin-top: 5px;
+            color: inherit;
+            display: inline;
+            font-size: inherit;
+            margin-top: 0;
         }
 
         h2 {
-            border-bottom: 1px solid var(--faint);
             color: var(--muted);
-            font-family: var(--sans);
-            font-size: 0.78rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            margin-bottom: 20px;
-            padding-bottom: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
             text-transform: uppercase;
         }
 
         h3 {
-            font-size: 1.08rem;
+            font-size: 1.02rem;
             font-weight: 600;
-            line-height: 1.35;
-            margin-bottom: 4px;
+            line-height: 1.4;
         }
 
         section {
-            margin: 54px 0;
-        }
-
-        .eyebrow {
-            color: var(--accent);
-            font-family: var(--sans);
-            font-size: 0.82rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            margin-bottom: 16px;
-            text-transform: uppercase;
+            margin: 3.5rem 0;
         }
 
         .lede {
-            font-size: 1.08rem;
-            line-height: 1.56;
-            margin-bottom: 18px;
+            color: #333333;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
         }
 
         .bio {
-            color: #3f3f3f;
-            font-size: 1.08rem;
-            max-width: 720px;
+            color: #333333;
+            font-size: 1.05rem;
+            max-width: 70ch;
         }
 
-        .feed {
-            display: grid;
-            gap: 0;
+        .bio + .bio {
+            margin-top: 1rem;
         }
 
-        .feed-item {
-            border-bottom: 1px solid var(--faint);
+        .dated-list {
             display: grid;
-            gap: 22px;
-            grid-template-columns: 108px 1fr;
-            padding: 15px 0;
+            gap: 0.8rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .dated-item {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 96px 1fr;
+            font-size: 0.96rem;
         }
 
         .date {
-            color: var(--muted);
-            font-family: var(--sans);
+            color: var(--light-muted);
+            font-family: var(--mono);
             font-size: 0.78rem;
-            line-height: 1.55;
+            line-height: 1.6;
+            text-transform: uppercase;
         }
 
-        .feed-item p,
-        .publication p,
+        .dated-item,
         .note {
-            color: #343434;
+            color: #333333;
         }
 
         .links {
@@ -196,8 +181,7 @@
 
         .links a {
             color: var(--accent);
-            font-family: var(--sans);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             text-decoration: none;
         }
 
@@ -206,95 +190,131 @@
             text-decoration: underline;
         }
 
-        .research-list,
-        .award-list {
+        .research-list {
             list-style: none;
             margin: 0;
             padding: 0;
         }
 
         .research-list li {
-            border-bottom: 1px solid var(--faint);
-            padding: 13px 0;
+            color: #333333;
+            font-size: 1rem;
+            margin-bottom: 0.55rem;
+            padding: 0;
         }
 
         .research-list strong {
             font-weight: 600;
+            color: #000000;
         }
 
         .publication {
-            border-bottom: 1px solid var(--faint);
-            padding: 18px 0;
+            font-size: 0.95rem;
+            margin-bottom: 1.55rem;
+            padding: 0;
         }
 
-        .meta {
+        .pub-heading {
+            align-items: baseline;
+            display: block;
+        }
+
+        .venue {
             color: var(--muted);
-            font-family: var(--sans);
-            font-size: 0.86rem;
-        }
-
-        .authors {
-            color: #343434;
-            font-size: 0.94rem;
-            margin: 3px 0 6px;
-        }
-
-        .award-list {
-            columns: 2;
-            column-gap: 34px;
-            color: #343434;
-        }
-
-        .award-list li {
-            break-inside: avoid;
-            margin-bottom: 10px;
-        }
-
-        .award-list span {
-            color: var(--muted);
-            font-family: var(--sans);
-            font-size: 0.78rem;
-            margin-right: 8px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            margin-left: 0.35rem;
             white-space: nowrap;
         }
 
-        footer {
-            border-top: 1px solid var(--faint);
+        .pub-heading h3 {
+            display: inline;
+        }
+
+        .authors {
             color: var(--muted);
-            font-family: var(--sans);
-            font-size: 0.78rem;
-            margin-top: 68px;
-            padding-top: 20px;
+            font-size: 0.9rem;
+            margin-top: 0.18rem;
+        }
+
+        .summary {
+            color: #444444;
+            font-size: 0.9rem;
+            margin-top: 0.35rem;
+            max-width: 68ch;
+        }
+
+        .summary summary {
+            color: var(--muted);
+            cursor: pointer;
+            display: inline;
+            font-size: 0.85rem;
+        }
+
+        .summary summary:hover,
+        .summary summary:focus {
+            color: var(--accent);
+        }
+
+        .summary p {
+            margin-top: 0.35rem;
+        }
+
+        .publication .links {
+            gap: 0;
+            margin-top: 0.3rem;
+        }
+
+        .publication .links a {
+            margin-right: 12px;
+        }
+
+        .publication .links a::after {
+            color: #cccccc;
+            content: " /";
+            margin-left: 12px;
+        }
+
+        .publication .links a:last-child::after {
+            content: "";
+            margin-left: 0;
+        }
+
+        footer {
+            color: var(--light-muted);
+            font-size: 0.8rem;
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--faint);
+            text-align: left;
+        }
+
+        footer a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        footer a:hover,
+        footer a:focus {
+            text-decoration: underline;
         }
 
         @media (max-width: 640px) {
-            html {
-                font-size: 16px;
-            }
-
             .page {
-                padding: 34px 18px 56px;
+                padding: 2.5rem 1.1rem 3.5rem;
             }
 
             .site-header {
-                align-items: flex-start;
-                flex-direction: column;
-                gap: 14px;
-                margin-bottom: 44px;
+                margin-bottom: 2.5rem;
             }
 
             .nav-links {
                 justify-content: flex-start;
             }
 
-            .feed-item {
-                gap: 4px;
+            .dated-item {
+                gap: 0.15rem;
                 grid-template-columns: 1fr;
-                padding: 16px 0;
-            }
-
-            .award-list {
-                columns: 1;
             }
         }
     </style>
@@ -302,7 +322,8 @@
 <body>
     <main class="page">
         <header class="site-header">
-            <a class="wordmark" href="/">Yuqi Yang</a>
+            <h1 id="intro-title">Yuqi Yang <span>(Aragorn)</span></h1>
+            <p class="tagline">Incoming Statistics PhD student at Wharton, starting Fall 2026.</p>
             <nav class="nav-links" aria-label="Primary">
                 <a href="https://scholar.google.com/citations?user=ICgQw6wAAAAJ">Scholar</a>
                 <a href="https://github.com/AragornBFRer">GitHub</a>
@@ -311,27 +332,28 @@
             </nav>
         </header>
 
-        <section aria-labelledby="intro-title">
-            <p class="eyebrow">Statistics PhD @ Wharton, Fall 2026</p>
-            <h1 id="intro-title">Yuqi Yang <span>(Aragorn)</span></h1>
+        <section aria-label="About">
             <p class="lede">
                 I study statistics and AI, with a current focus on uncertainty quantification, 
-                and rigorous evaluation of modern ML systems.
+                and statistics-guided agentic systems.
             </p>
             <p class="bio">
-                I am completing a bachelor's degree at HKUST, double majoring in Mathematics and
+                I am pursuing a bachelor's degree at HKUST, majoring in Mathematics and
                 Computer Science. I currently work with Prof. <a href="https://ying531.github.io/">Ying Jin</a>
                 at Wharton and Prof. <a href="https://facultyprofiles.hkust.edu.hk/profiles.php?profile=xinzhou-guo-xinzhoug">Xinzhou Guo</a>
                 at HKUST. Previously, I worked on cognitive science and intention understanding with
                 Prof. <a href="https://scholar.google.com/citations?user=MdQZ-q8AAAAJ&hl=en">Yangqiu Song</a>
                 at the KnowComp Group, and visited ETH Zurich in Spring 2025.
             </p>
+            <p class="bio">
+                During my undergrad, I also did internships in quantitative research at Hangzhou Wangdao, hedge fund research at Jihai Investment, and software development at Hundsun.
+            </p>
         </section>
 
         <!-- <section aria-labelledby="updates-title">
             <h2 id="updates-title">Updates</h2>
-            <div class="feed">
-                <article class="feed-item">
+            <div class="dated-list">
+                <article class="dated-item">
                     <time class="date" datetime="2026-05">May 2026</time>
                     <p>
                         <strong>Multi-Distribution Robust Conformal Prediction</strong> was accepted to ICML 2026.
@@ -341,7 +363,7 @@
                         </span>
                     </p>
                 </article>
-                <article class="feed-item">
+                <article class="dated-item">
                     <time class="date" datetime="2026-04">Apr 2026</time>
                     <p>
                         <strong>SessionIntentBench</strong> was accepted to Findings of ACL 2026.
@@ -365,71 +387,72 @@
         <section aria-labelledby="publications-title">
             <h2 id="publications-title">Publications</h2>
             <article class="publication">
-                <h3>Multi-Distribution Robust Conformal Prediction</h3>
+                <div class="pub-heading">
+                    <h3>Multi-Distribution Robust Conformal Prediction</h3>
+                    <span class="venue">[ICML 2026]</span>
+                </div>
                 <p class="authors">Yuqi Yang, Ying Jin</p>
-                <p class="meta">Accepted to ICML 2026</p>
-                <p>
-                    One prediction set with uniformly valid coverage across heterogeneous source distributions,
-                    using an asymptotically optimal score for efficient worst-case guarantees.
-                </p>
                 <p class="links">
                     <a href="https://arxiv.org/abs/2601.02998">Paper</a>
                     <a href="https://github.com/AragornBFRer/MDCP">Code</a>
                 </p>
+                <details class="summary">
+                    <summary>Summary</summary>
+                    <p>
+                        One prediction set with uniformly valid coverage across heterogeneous source distributions,
+                        using an asymptotically optimal score for efficient worst-case guarantees.
+                    </p>
+                </details>
             </article>
 
             <article class="publication">
-                <h3>SessionIntentBench: Multi-task Inter-Session Intention-Shift Modeling Benchmark for E-commerce Customer Behavior Understanding</h3>
+                <div class="pub-heading">
+                    <h3>SessionIntentBench: Multi-task Inter-Session Intention-Shift Modeling Benchmark for E-commerce Customer Behavior Understanding</h3>
+                    <span class="venue">[Findings of ACL 2026]</span>
+                </div>
                 <p class="authors">Yuqi Yang, Weiqi Wang, Baixuan Xu, Wei Fan, Qing Zong, Chunkit Chan, Zheye Deng, Xin Liu, Yifan Gao, Changlong Yu, Chen Luo, Yang Li, Zheng Li, Qingyu Yin, Bing Yin, Yangqiu Song</p>
-                <p class="meta">Accepted to Findings of ACL 2026</p>
-                <p>
-                    A benchmark and modeling framework for intention shifts across underexplored
-                    e-commerce session interactions.
-                </p>
                 <p class="links">
                     <a href="https://arxiv.org/abs/2507.20185">Paper</a>
                 </p>
+                <details class="summary">
+                    <summary>Summary</summary>
+                    <p>
+                        A benchmark and modeling framework for user purchase intent extracted from e-commerce session interactions.
+                    </p>
+                </details>
             </article>
-        </section>
-
-        <section aria-labelledby="experience-title">
-            <h2 id="experience-title">Experience</h2>
-            <div class="feed">
-                <!-- <article class="feed-item">
-                    <span class="date">Sep 2025-present</span>
-                    <p><strong>Research Assistant, HKUST.</strong> Conformal prediction with latent cluster modeling at the covariate and residual levels.</p>
-                </article> -->
-                <!-- <article class="feed-item">
-                    <span class="date">May 2025-present</span>
-                    <p><strong>Research Assistant, Wharton.</strong> Multi-distribution robust conformal prediction with uniform coverage guarantees.</p>
-                </article> -->
-                <!-- <article class="feed-item">
-                    <span class="date">Apr 2024-Feb 2025</span>
-                    <p><strong>Research Assistant, KnowComp Group.</strong> Intention modeling, benchmark construction, data generation, and model evaluation for session understanding.</p>
-                </article> -->
-                <article class="feed-item">
-                    <span class="date">2023-2025</span>
-                    <p><strong>Interns.</strong> Quant research at Hangzhou Wangdao, hedge fund research at Jihai Investment, and software development at Hundsun.</p>
-                </article>
-            </div>
         </section>
 
         <section aria-labelledby="awards-title">
             <h2 id="awards-title">Selected Awards</h2>
-            <ul class="award-list">
-                <li><span>Aug 2024</span>China Construction Bank Asia Scholarship</li>
-                <li><span>May 2024</span>S.S. Chern Class Scholarship</li>
-                <li><span>Apr 2024</span>Chiaphua Industries Limited Scholarship</li>
-                <li><span>Jan 2024</span>Dean's Honours List</li>
-                <li><span>Oct 2023</span>University Scholarship Scheme for Continuing UG Student</li>
+            <ul class="dated-list">
+                <li class="dated-item">
+                    <span class="date">Aug 2024</span>
+                    <span>China Construction Bank Asia Scholarship</span>
+                </li>
+                <li class="dated-item">
+                    <span class="date">May 2024</span>
+                    <span>S.S. Chern Class Scholarship</span>
+                </li>
+                <li class="dated-item">
+                    <span class="date">Apr 2024</span>
+                    <span>Chiaphua Industries Limited Scholarship</span>
+                </li>
+                <li class="dated-item">
+                    <span class="date">Jan 2024</span>
+                    <span>Dean's Honours List</span>
+                </li>
+                <li class="dated-item">
+                    <span class="date">Oct 2023</span>
+                    <span>University Scholarship Scheme for Continuing UG Student</span>
+                </li>
             </ul>
         </section>
 
         <section aria-labelledby="misc-title">
             <h2 id="misc-title">Misc</h2>
             <p class="note">
-                Outside of research, I go by Aragorn. The name has followed me since I first watched
-                <em>The Lord of the Rings</em>.
+                Outside of research, I go by Aragorn. It's a nod to my favorite movie series, <em>The Lord of the Rings</em>, and it's the name I've used ever since I first saw the films.
             </p>
         </section>
 
