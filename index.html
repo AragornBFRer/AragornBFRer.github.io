@@ -243,6 +243,22 @@
             padding: 0 0.03em;
         }
 
+        .cofirst {
+            color: var(--accent);
+            font-size: 0.72em;
+            line-height: 0;
+            margin-left: 0.05em;
+            position: relative;
+            top: -0.22em;
+            vertical-align: baseline;
+        }
+
+        .publication-note {
+            color: var(--light-muted);
+            font-size: 0.82rem;
+            margin-top: 0.25rem;
+        }
+
         .summary {
             color: #444444;
             font-size: 0.9rem;
@@ -406,7 +422,7 @@
                     <summary>Summary</summary>
                     <p>
                         One prediction set with uniformly valid coverage across heterogeneous source distributions,
-                        using an asymptotically optimal score for efficient worst-case guarantees.
+                        using an asymptotically optimal score for efficiency with tight worst-case guarantees.
                     </p>
                 </details>
             </article>
@@ -416,7 +432,7 @@
                     <h3>SessionIntentBench: Multi-task Inter-Session Intention-Shift Modeling Benchmark for E-commerce Customer Behavior Understanding</h3>
                     <span class="venue">[Findings of ACL 2026]</span>
                 </div>
-                <p class="authors"><span class="author-me">Yuqi Yang</span>, Weiqi Wang, Baixuan Xu, Wei Fan, Qing Zong, Chunkit Chan, Zheye Deng, Xin Liu, Yifan Gao, Changlong Yu, Chen Luo, Yang Li, Zheng Li, Qingyu Yin, Bing Yin, Yangqiu Song</p>
+                <p class="authors"><span class="author-me">Yuqi Yang<sup class="cofirst" aria-label="co-first author">*</sup></span>, Weiqi Wang<sup class="cofirst" aria-label="co-first author">*</sup>, Baixuan Xu, Wei Fan, Qing Zong, Chunkit Chan, Zheye Deng, Xin Liu, Yifan Gao, Changlong Yu, Chen Luo, Yang Li, Zheng Li, Qingyu Yin, Bing Yin, Yangqiu Song</p>
                 <p class="links">
                     <a href="https://arxiv.org/abs/2507.20185">Paper</a>
                 </p>
@@ -427,6 +443,8 @@
                     </p>
                 </details>
             </article>
+
+            <p class="publication-note"><sup class="cofirst">*</sup> Co-first authors.</p>
         </section>
 
         <section aria-labelledby="awards-title">
